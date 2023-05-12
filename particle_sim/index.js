@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-let snow = [], lengthos = 100, size = 10, blue = 255, opp = 0
+let snow = [], lengthos = 100, size = 5, blue = 255, opp = 0
 
 let colours = ['rgb(239, 71, 111)','rgb(255, 209, 102)','rgb(6, 214, 160)','rgb(17, 138, 178)']
 
@@ -20,7 +20,7 @@ class Particle {
         this.w = h
         this.h = w
         this.opp = opp
-        this.speed = (Math.random()* 25)
+        this.speed = (Math.random()* 4) + 2
         this.rgb = choose(colours)
         snow.push(this)
     }
@@ -37,7 +37,7 @@ class Particle {
 function main_loop(){
     ctx.clearRect(0, 0,canvas.width, canvas.height)
 
-    for(let i = 0; i < 2; i++){
+    for(let i = 0; i < 4; i++){
         new Particle(Math.floor(Math.random() * innerWidth),1, size, size, 255)
     }
 
@@ -58,3 +58,19 @@ function main_loop(){
 }
 
 requestAnimationFrame(main_loop)
+
+let mouse_down = false
+
+document.addEventListener('mousedown', event => {
+    mouse_down = true
+})
+
+document.addEventListener('mousemove', event => {
+    if(mouse_down){
+        new Particle(event.clientX, event.clientY, 10, 10)
+    }
+})
+
+document.addEventListener('mouseup', event => {
+    mouse_down = false
+})
