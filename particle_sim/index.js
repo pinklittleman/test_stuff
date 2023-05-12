@@ -6,6 +6,13 @@ canvas.height = innerHeight
 
 let snow = [], lengthos = 100, size = 10, blue = 255, opp = 0
 
+let colours = ['rgb(239, 71, 111)','rgb(255, 209, 102)','rgb(6, 214, 160)','rgb(17, 138, 178)']
+
+function choose(choices) {
+    var index = Math.floor(Math.random() * choices.length);
+    return choices[index];
+}
+
 class Particle {
     constructor(x,y,h,w){
         this.x = x
@@ -14,7 +21,7 @@ class Particle {
         this.h = w
         this.opp = opp
         this.speed = (Math.random()* 25)
-        this.rgb = `rgb(${(Math.random() * 255)},${(Math.random() * 255)},${(Math.random() * 255)})`
+        this.rgb = choose(colours)
         snow.push(this)
     }
     draw(){
