@@ -64,7 +64,7 @@ function based_loop() {
             ctx.font = "bold 20px Arial";
             ctx.shadowBlur = 2;
             ctx.shadowColor = "grey";
-            let txt = `you are looking at ${days.length} days in total; the red squares represent the days you have been alive`
+            let txt = `you are looking at ${days.length} days in total; the red squares represent the days you've been alive`
             let width2 = ctx.measureText(txt).width
             ctx.fillText(txt, canvas.width / 2 - width2/2, canvas.height / 2)
             ctx.shadowBlur = 0;
