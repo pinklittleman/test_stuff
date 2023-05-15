@@ -28,10 +28,10 @@ class Day {
     }
     draw(){
         // ctx.fillStyle = "rgb(25,25,25)"
-        // ctx.beginPath()
+        ctx.beginPath()
         ctx.rect(this.x,this.y,this.size,this.size)
-        // ctx.fill()
-        // ctx.closePath()
+        ctx.fill()
+        ctx.closePath()
     }
 }
 
