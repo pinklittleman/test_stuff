@@ -50,7 +50,7 @@ function based_loop() {
         d.draw()
     });
 
-    for(let i = 0; i < 365; i++){
+    for(var i = 0; i < 365; i++){
         if(y <= canvas.height-8){
             new Day(x,y,5)
             x += 6
