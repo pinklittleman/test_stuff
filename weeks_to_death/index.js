@@ -71,7 +71,9 @@ function based_loop() {
         }
     }
     
-    requestAnimationFrame(based_loop)
+    setTimeout(() => {
+        requestAnimationFrame(based_loop)
+    }, 250);
 }
 
 requestAnimationFrame(based_loop)
