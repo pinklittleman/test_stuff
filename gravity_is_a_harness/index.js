@@ -1,11 +1,11 @@
 
 
 function setup() {
-  createCanvas(innerWidth, innerHeight);
-  
+    createCanvas(innerWidth, innerHeight);
+        
 }
 
 function draw() {
-  background(51);
-
+    background(51);
+    
 }
