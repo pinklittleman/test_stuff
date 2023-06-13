@@ -50,13 +50,15 @@ function based(){
     stuff.forEach(item => {
         item.draw()
         item.y++
-        if(item.y > canvas.height){
-
-            indexoe = stuff.indexOf(item)
-            stuff.splice(indexoe, 1)
-             
-        }
-    });    
+       
+            if(item.y > canvas.height){
+                
+                indexoe = stuff.indexOf(item)
+                stuff.splice(indexoe, 1)
+                
+            }
+            
+        });
 
     requestAnimationFrame(based)
 }
