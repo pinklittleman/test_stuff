@@ -20,25 +20,9 @@ class square{
         ctx.fillRect(this.x, this.y, this.size, this.size)
     }
 }
-class circle{
-    constructor(x,y){
-        this.x = x
-        this.y = y
-        this.size = 20
-        stuff.push(this)
-    }
 
-    draw(){
-        ctx.fillStyle = 'rgb(20,20,200)'
-        ctx.beginPath()
-        ctx.arc(this.x,this.y, 15, 0, 2*Math.PI)
-        ctx.fill()
-    }
-}
-
-for (let i = 0; i < 500; i++) {
-    new square(Math.floor(Math.random() * canvas.width),  Math.floor(Math.random() * 500))
-    new circle(Math.floor(Math.random() * canvas.width),  Math.floor(Math.random() * 500)) 
+for (let i = 0; i < 19500; i++) {
+    new square(Math.floor(Math.random() * canvas.width),  Math.floor(Math.random() * 700))
 }
 
 function based(){
@@ -51,10 +35,9 @@ function based(){
         item.draw()
         item.y++
        
-            if(item.y > canvas.height){
+            if(item.y > canvas.height-10){
                 
-                indexoe = stuff.indexOf(item)
-                stuff.splice(indexoe, 1)
+                item.y = item.y - (Math.floor(Math.random() * 300))
                 
             }
             
